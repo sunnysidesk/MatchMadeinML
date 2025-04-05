@@ -1,2 +1,3 @@
 # OKCupid
-ML Project MSBA
+
+This machine learning project was produced by a team of three as part of the graduate Machine Learning course at UC Davis. Named 'Match made in ML', it explores the use of AI in online dating by leveraging Facebook AI Similarity Search (FAISS) with cosine similarity to match dating profiles from the publicly available OKCupid dataset. We implemented three methods: a baseline Cosine Similarity model, a FAISS-based model, and an optimized Weighted FAISS model tuned via grid search and cross-validation. Our grid search identified the best weight combination (Essay=2.0, Features=0.5, Numerics=0.5) with improved performance metrics, achieving a MAP of 0.7699 and an MRR of 0.9838. These results demonstrate that our optimized Weighted FAISS model provides high ranking quality and efficiency—key factors in making meaningful connections in online dating.
