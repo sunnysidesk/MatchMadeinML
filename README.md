@@ -4,6 +4,6 @@ This machine learning project was produced by a team of three as part of the gra
 
 Our approach used FAISS with cosine similarity enhanced by a weighted feature combination optimized through grid search and cross-validation. Our experiments indicate that by prioritizing essay embeddings, our Weighted FAISS model outperforms baseline methods in key ranking metrics (MAP and MRR) while maintaining reasonable diversity. Through this project, we realised the importance of achieving balance between ranking quality, diversity and efficiency, as well as the fact that choosing the best model also depended on the project priority. Realistically, when a user is shown potential matches, the order matters significantly, meaning if highly compatible matches appear lower in the list, users might stop scrolling before reaching them, were this algorithm implemented in a dating application. This led to the conclusion that weighted FAISS is the best model to leverage, also having feature-engineered user profile features to weigh personality-enhancing features higher. This project highlights the potential of leveraging advanced similarity search techniques in the competitive space of online dating with a focus on most relevant matches ranking higher, paving the way for more intelligent and personalized matchmaking systems.
 
-Read the full project report [here](report/Project_Report)  
-View the preprocessing approach [here](preprocessing/EDA_&_preprocessing.ipynb)  
-View the modelling approach [here](modelling/okcupid_Matching.ipynb)  
+Read the full project report: [Project Report.pdf](report/Project_Report)  
+View the preprocessing approach: [EDA_&_Preprocessing.ipynb](preprocessing/EDA_&_preprocessing.ipynb)  
+View the modelling approach: [okcupid_Matching.ipynb](modelling/okcupid_Matching.ipynb)  
