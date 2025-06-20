@@ -1,9 +1,56 @@
-# Match Made in ML - A Profile Matching Algorithm
+# Match Made in ML – A Profile Matching Algorithm
 
-This machine learning project was produced by a team of three as part of the graduate Machine Learning course at UC Davis. Named 'Match made in ML', it explores the use of AI in online dating by leveraging Facebook AI Similarity Search (FAISS) with cosine similarity to match dating profiles from the publicly available OKCupid dataset. We implemented three methods: a baseline Cosine Similarity model, a FAISS-based model, and an optimized Weighted FAISS model tuned via grid search and cross-validation. Our grid search identified the best weight combination (Essay=2.0, Features=0.5, Numerics=0.5) with improved performance metrics, achieving a MAP of 0.7699 and an MRR of 0.9838. These results demonstrate that our optimized Weighted FAISS model provides high ranking quality and efficiency—key factors in making meaningful connections in online dating.
+This machine learning project was developed as part of the graduate Machine Learning course at UC Davis by a team of three. It explores how artificial intelligence can improve online dating experiences through intelligent profile matching. 
 
-Our approach used FAISS with cosine similarity enhanced by a weighted feature combination optimized through grid search and cross-validation. Our experiments indicate that by prioritizing essay embeddings, our Weighted FAISS model outperforms baseline methods in key ranking metrics (MAP and MRR) while maintaining reasonable diversity. Through this project, we realised the importance of achieving balance between ranking quality, diversity and efficiency, as well as the fact that choosing the best model also depended on the project priority. Realistically, when a user is shown potential matches, the order matters significantly, meaning if highly compatible matches appear lower in the list, users might stop scrolling before reaching them, were this algorithm implemented in a dating application. This led to the conclusion that weighted FAISS is the best model to leverage, also having feature-engineered user profile features to weigh personality-enhancing features higher. This project highlights the potential of leveraging advanced similarity search techniques in the competitive space of online dating with a focus on most relevant matches ranking higher, paving the way for more intelligent and personalized matchmaking systems.
+We leverage **Facebook AI Similarity Search (FAISS)** and cosine similarity to build a high-performance recommender system using a publicly available OKCupid dataset (~60,000 profiles). Our solution ranks potential matches based on both structured and unstructured profile data.
 
-Read the full project report: [Project Report.pdf](report/Project_Report)  
-View the preprocessing approach: [EDA_&_Preprocessing.ipynb](preprocessing/EDA_&_preprocessing.ipynb)  
-View the modelling approach: [okcupid_Matching.ipynb](modelling/okcupid_Matching.ipynb)  
+## Project Objective
+
+Design a scalable and accurate matching algorithm that pairs user profiles based on:
+- Textual data (user bios and essays)
+- Categorical features (e.g., job, religion)
+- Numeric features (e.g., age, height)
+
+## Methods
+
+We implemented and compared three matching models:
+1. **Baseline Cosine Similarity**
+2. **FAISS Approximate Nearest Neighbor Search**
+3. **Optimized Weighted FAISS** – our final model
+
+The **Weighted FAISS model** used a grid search to tune the relative importance of each feature group:
+- Essay = 2.0
+- Categorical = 0.5
+- Numerical = 0.5
+
+## Results
+
+- **MAP (Mean Average Precision):** 0.7699  
+- **MRR (Mean Reciprocal Rank):** 0.9838
+
+Our optimized Weighted FAISS model significantly outperformed the baseline, showing strong ranking quality while maintaining diversity and efficiency — critical for practical matchmaking applications.
+
+## Insights
+
+We discovered that:
+- Essay embeddings contribute most to perceived compatibility
+- Fine-tuning feature weights improves recommendation quality
+- In matchmaking, **ranking order is crucial** — users may not scroll far, so highly compatible matches must appear early
+
+This project demonstrates the power of advanced similarity search techniques in creating more relevant, personalized online dating experiences.
+
+## Repository Contents
+
+- `EDA_&_Preprocessing.ipynb` – Feature engineering and data prep
+- `okcupid_Matching.ipynb` – Modeling pipeline and evaluation
+- `Project Report.pdf` – Full write-up with methodology and findings
+
+## Tools & Technologies
+
+- Python, pandas, scikit-learn, FAISS, Hugging Face Transformers
+- DistilBERT for essay embedding
+- GridSearchCV for parameter optimization
+
+## Authors
+
+Developed by Sakshi Kumar, Amber Gonzalez-Pacheco, Abhay Padmanabhan @ UC Davis, 2025
