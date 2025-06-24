@@ -1,4 +1,5 @@
 # Match Made in ML – A Profile Matching Algorithm
+_A machine learning system for profile matching using FAISS and BERT embeddings_
 
 This machine learning project was developed as part of the graduate Machine Learning course at UC Davis by a team of three. It explores how artificial intelligence can improve online dating experiences through intelligent profile matching. 
 
